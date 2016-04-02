@@ -92,7 +92,8 @@
                     this.$el.html(template(this.model.toJSON()));
                     $('.sendbutton').on('click', this.send);
                     setTimeout(function() {
-                        alert("Тест завершен");
+                        // alert("Тест завершен");
+                        swal("Тест завершен!", "Время истекло")
                         location.reload();
                     }, 60000);
                     return this;
@@ -113,12 +114,14 @@
                         $checkboxes.each(function() {
 
                             if (TEST.Env.answers.indexOf(parseInt($(this).val())) != -1 && i == 2) {
-                                alert('Вы правильно ответили');
+                                // alert('Вы правильно ответили');
+                                swal("Вы правильно ответили!", "Ура", "success")
                                 return
                                 // location.reload();
                             } else if (i == 2) {
-                                alert('Попробуйте еще раз');
-                                // location.reload();
+                                // alert('Попробуйте еще раз');
+                                swal("Попробуйте еще раз!", "Бывает", "error")
+                                    // location.reload();
                             }
                             i++;
                         })
