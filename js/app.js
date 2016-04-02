@@ -114,6 +114,7 @@
 
                             if (TEST.Env.answers.indexOf(parseInt($(this).val())) != -1 && i == 2) {
                                 alert('Вы правильно ответили');
+                                return
                                 // location.reload();
                             } else if (i == 2) {
                                 alert('Попробуйте еще раз');
