@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Тест backbone</title>
+    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version." />
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+    <link href="docs/assets/css/demo.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <style type="text/css">
+    .margin20 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    <div class="container">
+        <div class="demo-headline">
+            <h1 class="demo-logo">
+          Тестовое
+          <small>backbone</small>
+        </h1>
+        </div>
+        <!-- /demo-headline -->
+        <div class="row">
+            <h4>Вопрос:</h4>
+            <p>Вы владелец нескольких небольших кофеен. В настоящий момент перед вами стоит задача по открытию новой точки, расположенной в работающем торговом центре. </p>
+            <p>На этапе подписания договора аренды вы настояли на согласовании с арендодателем условий размещения вывески на фасаде торгового центра. </p>
+            <p>Этот вопрос был успешно решен вами: в подписанный договор аренды включили пункт об обязательстве арендодателя предоставить место на фасаде для размещения вывескикофейни, также в качестве приложения к договору аренды был подписан эскиз будущей вывески. </p>
+            <p>Проблема казалась решенной, но неожиданно ваш подрядчик при монтаже новой вывески столкнулся с отказом арендодателя в предоставлении места на фасаде. Кафе должно открыться через неделю. монтаже новой вывески столкнулся с отказом арендодателя в предоставлении места на фасаде. Кафе должно открыться через неделю. Выберите 3 наиболее важных действия. </p>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="demo-panel-title">Ответы:</h3>
+                <div id="insert">
+                </div>
+                <!-- /#insert -->
+            </div>
+            <div class="col-xs-3">
+                <a href="#send" class="btn btn-block btn-lg btn-primary margin20 sendbutton">Отправить</a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+        <div class="row">
+            <h4>Задача: </h4>
+            <p>Простой одностраничник с тестом и кнопкой "отправить". Тест - вопрос и список ответов к нему, multiple choice. Пользователь заходит на страницу, отмечает ответы, кликает на отправить. Получает алертом результат - прошел или нет. При этом работает таймер - минуту. По истечении также алерт - "Тест завершен". При закрытии алерта перезагружаем странцу. Бэкенд не нужен, результаты обрабатываем сразу на фронте. Список ответов можно захардкодить в каком-нибудь массивчике) Главное, не в верстке. Верстка, кстати, также не важна. Нужны бэкбоновские модели и вьюха, шаблонизатор на твой выбор, стандартный от underscore - ок)</p>
+            <h4>Вопрос для теста:</h4>
+            <p>Верные ответы - 1, 2, 3 Пользователь проходит тест, если указывает все 3 ответа.</p>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /container -->
+    <script type="text/template" id="testTemplate">
+        <% _.each(questions, function(question) { %>
+            <label class="checkbox" for="checkbox<%= question.pk%>">
+                <input type="checkbox" value="<%= question.pk%>" id="checkbox<%= question.pk%>" data-toggle="checkbox">
+                <%= question.value%>
+            </label>
+            <% }) %>
+    </script>
+    <!-- /#testTemplate -->
+    <script src="dist/js/vendor/jquery.min.js"></script>
+    <script src="dist/js/vendor/video.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/backbone/backbone-min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="dist/js/flat-ui.min.js"></script>
+</body>
+
+</html>
